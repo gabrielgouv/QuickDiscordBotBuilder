@@ -67,7 +67,7 @@ export default class DiscordBot {
 
     private setUpChatMessageListener(): void {
         this.client.on('message', message => {
-            this.messageProcessor.exec(message, this);
+            this.messageProcessor.exec(message);
         });
     }
 

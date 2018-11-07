@@ -1,6 +1,5 @@
 import MessageProcessor from "./message-processor";
 import DiscordBot from "../discord-bot";
-import BotAction from "../bot-action";
 import BotCommand from "../bot-command";
 import { Message } from "discord.js";
 
@@ -14,8 +13,6 @@ export default class StandardMessageProcessor extends MessageProcessor {
 
         const messageContent = message.content;
         let splittedMessage = messageContent.split(' ');
-
-        console.log(messageContent);
 
         let trigger = splittedMessage[0];
         let args = splittedMessage.splice(1, splittedMessage.length);

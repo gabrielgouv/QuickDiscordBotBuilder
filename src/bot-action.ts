@@ -1,24 +1,16 @@
 import { Message, Attachment } from "discord.js";
 import fs from 'fs';
-import DiscordBot from "./discord-bot";
-import BotCommand from "./bot-command";
 
 export default class BotAction {
 
     private message: Message;
-    private bot: DiscordBot;
 
-    public constructor(message: Message, bot: DiscordBot) {
+    public constructor(message: Message) {
         this.message = message;
-        this.bot = bot;
     }
 
     public getMessage(): Message {
         return this.message;
-    }
-
-    public getDiscordBot(): DiscordBot {
-        return this.bot;
     }
 
     public getUserName(): string {
