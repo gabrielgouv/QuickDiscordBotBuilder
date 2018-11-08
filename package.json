@@ -20,7 +20,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "node-opus": "^0.3.1"
+    "node-opus": "^0.3.1",
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "^10.12.2"

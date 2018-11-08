@@ -2,18 +2,8 @@ import DiscordBot from "./src/discord-bot";
 import BotOptions from "./src/bot-options";
 
 const options: BotOptions = {
-    token: '<YOUR TOKEN>',
-    showLogs: true
+    token: 'NTA4MTA1OTIyNzIwMDM4OTM0.DsQQEQ.-1cfwP0W7OW0ubgzxXvyUgVLnJ4',
+    commandsDirectory: './commands'
 }
 
-let bot = new DiscordBot(options);
-
-bot.addCommand({
-    trigger: '!ping', 
-    description: 'ping pong',
-    onTriggered: (action, args) => {
-        action.sendTextReply('pong ' + args.toString());
-    }
-});
-
-bot.start();
+new DiscordBot(options).start();

@@ -4,15 +4,19 @@ import BotCommand from "./bot-command";
 import RegistrableCommand from "./registrable-command";
 import MessageProcessor from "./message/message-processor";
 import StandardMessageProcessor from "./message/standard-message-processor";
+import fs from "fs";
+import path from "path"
+import Log from "./utils/log"
+import StringUtils from "./utils/string-utils";
+
 
 export default class DiscordBot {
-
-    public static readonly DEFAULT_PREFIX = '!'
 
     private messageProcessor: MessageProcessor;
     private options: BotOptions;
     private client: Client;
     private commands: BotCommand[]
+    private skippedCommands: number;
 
     public constructor(token: string)
     public constructor(options: BotOptions) 
@@ -22,28 +26,32 @@ export default class DiscordBot {
 
         if (typeof value === 'string') {
             this.options = { token: value }
-            if (this.options.messageProcessor) {
+            if (this.options.messageProcessor) 
                 this.messageProcessor = this.options.messageProcessor;
-            }
         } else {
             this.options = value;
         }
         
         this.client = new Client();
         this.commands = [];
+        this.skippedCommands = 0;
     
     }
 
     public addCommand(command: BotCommand): void {
+
+        if (this.findCommand(command.trigger)) {
+            Log.warn(`[${StringUtils.setBashColor(33, 'SKIPPED')}] A command with '${StringUtils.setBashColor(90, command.trigger)}' trigger has already been added.`);
+            this.skippedCommands++;
+            return;
+        }
+
         this.commands.push(command);
+        Log.info(`[${StringUtils.setBashColor(32, ' ADDED ')}] Added '${StringUtils.setBashColor(90, command.trigger)}' command in commands list.`);
     }
 
     public registerCommand(registrableCommand: RegistrableCommand): void {
         registrableCommand.register(this);
-    }
-
-    public showLogs(showLogs: boolean): void {
-        this.options.showLogs = showLogs;
     }
 
     public findCommand(value: string): BotCommand | null {
@@ -57,11 +65,14 @@ export default class DiscordBot {
     }
 
     public start(): void {
-        console.log(`Starting...`);
+        
+        this.loadCommandsFromCommandsFolder();
+
         this.client.on('ready', () => {
-            console.log(`Started successfully with ${this.commands.length} command(s) loaded.`);
+            Log.info(StringUtils.setBashColor(32, `Started successfully with ${this.commands.length} command(s) loaded and ${this.skippedCommands} skipped.`));
             this.setUpChatMessageListener();
         })
+
         this.client.login(this.options.token).catch(console.log);
     }
 
@@ -69,6 +80,33 @@ export default class DiscordBot {
         this.client.on('message', message => {
             this.messageProcessor.exec(message);
         });
+    }
+
+    // TODO: criar um file visitor
+    private loadCommandsFromCommandsFolder(): void {
+
+        const directory = this.options.commandsDirectory;
+
+        if (directory) {
+
+            const relativePath = '../' +  path.relative(process.cwd(), directory);
+            const dirFiles = fs.readdirSync(directory);
+
+            dirFiles.forEach(file => {
+
+                // TODO: Refactor
+                file = file.substr(0, file.length - 3);
+
+                import(`${relativePath + '/' + file}`).then((a) => {
+                    a.default.prototype.register(this);
+                }).catch(err => {
+                    Log.error(err);
+                })
+
+            })
+
+        }
+  
     }
 
 }

@@ -3,7 +3,7 @@ import MessageProcessor from "./message/message-processor";
 export default interface BotOptions {
 
     token: string
-    showLogs?: boolean
+    commandsDirectory?: string
     messageProcessor?: MessageProcessor
 
 }
