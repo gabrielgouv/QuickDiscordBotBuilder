@@ -29,8 +29,10 @@ export default class Log {
     private static readonly logger = createLogger({
         format: format.combine(
             format.cli(),
+            format.timestamp(),
+            format.colorize(),
             format.printf((info) => {
-                return `[${info.level}] ${info.message}`;
+                return `[${new Date(info.timestamp).toUTCString()} | ${info.level}] ${info.message}`;
             }),
         ),
         transports: [

@@ -9,15 +9,15 @@ export default class CommandScanner {
     private readonly options: IOptions = { ignore: 'dist/**/*' };
 
     public constructor(private pattern: string, private bot: DiscordBot) { }
-
-    public scan(): string[] {
-        return glob.sync(this.pattern, this.options);
-    }
-
+    
     public scanAndRegister(): void {
         this.scan().forEach(file => {
             this.register(file);
         });
+    }
+
+    public scan(): string[] {
+        return glob.sync(this.pattern, this.options);
     }
 
     public register(file: string): void {

@@ -5,7 +5,6 @@ import RegistrableCommand from "./registrable-command";
 import MessageProcessor from "./message/message-processor";
 import StandardMessageProcessor from "./message/standard-message-processor";
 import Log from "./utils/log"
-import StringUtils from "./utils/string-utils";
 import CommandScanner from "./command-scanner";
 
 
@@ -37,13 +36,13 @@ export default class DiscordBot {
 
     public addCommand(command: BotCommand): void {
         if (this.findCommand(command.trigger)) {
-            Log.warn(`[${StringUtils.setBashColor(33, 'SKIPPED')}] A command with '${StringUtils.setBashColor(90, command.trigger)}' trigger has already been added.`);
+            Log.warn(`[SKIPPED] A command with '${command.trigger}' trigger has already been added.`);
             this.skippedCommands++;
             return;
         }
 
         this.commands.push(command);
-        Log.info(`[${StringUtils.setBashColor(32, ' ADDED ')}] Added '${StringUtils.setBashColor(90, command.trigger)}' command in commands list.`);
+        Log.info(`[ ADDED ] Added '${command.trigger}' command in commands list.`);
     }
 
     public registerCommand(registrableCommand: RegistrableCommand): void {
@@ -65,7 +64,7 @@ export default class DiscordBot {
         this.scanAndRegisterCommands();
 
         this.client.on('ready', () => {
-            Log.info(StringUtils.setBashColor(32, `Started successfully with ${this.commands.length} command(s) loaded and ${this.skippedCommands} skipped.`));
+            Log.info(`Started successfully with ${this.commands.length} command(s) loaded and ${this.skippedCommands} skipped.`);
             this.setUpChatMessageListener();
         })
 
