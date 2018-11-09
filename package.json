@@ -1,9 +1,9 @@
 {
   "name": "dqbb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
-  "main": "dist/discord-bot.js",
-  "types": "dist/discord-bot.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },

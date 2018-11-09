@@ -3,9 +3,12 @@
     "target": "es6",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "dist",
+    "outDir": "./dist",
     "strict": true,
     "types": ["node"],
     "esModuleInterop": true
-  }
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
