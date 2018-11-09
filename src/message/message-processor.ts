@@ -1,8 +1,8 @@
-import BotAction from "../bot-action";
+import { BotAction } from "../bot-action";
 import { Message } from "discord.js";
-import BotCommand from "../bot-command";
+import { BotCommand } from "../bot-command";
 
-export default abstract class MessageProcessor {
+export abstract class MessageProcessor {
 
     public exec(message: Message): void {
         const { trigger, args } = this.process(message);

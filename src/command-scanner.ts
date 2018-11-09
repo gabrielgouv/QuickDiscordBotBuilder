@@ -1,10 +1,10 @@
 import { IOptions } from "glob";
 import glob from "glob";
 import Log from "./utils/log";
-import DiscordBot from "./discord-bot";
-import ReflectionUtils from "./utils/reflection-utils";
+import { DiscordBot } from "./discord-bot";
+import { ReflectionUtils } from "./utils/reflection-utils";
 
-export default class CommandScanner {
+export class CommandScanner {
 
     private readonly options: IOptions = { ignore: 'dist/**/*' };
 

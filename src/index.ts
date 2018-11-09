@@ -1,1 +1,1 @@
-export * from '.'
+export { DiscordBot } from "./discord-bot";

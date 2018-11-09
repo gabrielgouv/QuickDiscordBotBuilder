@@ -1,6 +1,6 @@
-import MessageProcessor from "./message/message-processor";
+import { MessageProcessor } from "./message/message-processor";
 
-export default interface BotOptions {
+export interface BotOptions {
 
     token: string
     commandFilePattern?: string

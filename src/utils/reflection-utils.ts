@@ -1,4 +1,4 @@
-export default class ReflectionUtils {
+export class ReflectionUtils {
 
     public static invokeMethod(object: any): any {
         const methodReturn = object.default.prototype;

@@ -1,6 +1,6 @@
-import BotAction from "./bot-action";
+import { BotAction } from "./bot-action";
 
-export default interface BotCommand {
+export interface BotCommand {
 
     trigger: string
     description: string

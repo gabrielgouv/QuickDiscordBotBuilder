@@ -1,7 +1,7 @@
-import DiscordBot from "./discord-bot";
-import BotCommand from "./bot-command";
+import { DiscordBot } from "./discord-bot";
+import { BotCommand } from "./bot-command";
 
-export default interface RegistrableCommand {
+export interface RegistrableCommand {
 
     register(bot: DiscordBot): BotCommand;
 

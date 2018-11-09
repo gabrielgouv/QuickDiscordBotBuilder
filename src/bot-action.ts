@@ -1,7 +1,7 @@
 import { Message, Attachment } from "discord.js";
 import fs from 'fs';
 
-export default class BotAction {
+export class BotAction {
 
     private message: Message;
 
