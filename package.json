@@ -1,11 +1,11 @@
 {
-  "name": "discord-quick-bot-builder",
+  "name": "dqbb",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/discord-bot.js",
+  "types": "dist/discord-bot.d.ts",
   "scripts": {
-    "start": "tsc && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && node dist/index.js"
   },
   "keywords": [
     "discord",
