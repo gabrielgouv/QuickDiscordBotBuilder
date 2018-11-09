@@ -5,7 +5,7 @@
   "main": "dist/discord-bot.js",
   "types": "dist/discord-bot.d.ts",
   "scripts": {
-    "start": "tsc && node dist/index.js"
+    "build": "tsc"
   },
   "keywords": [
     "discord",
