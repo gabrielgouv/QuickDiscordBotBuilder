@@ -1,1 +1,9 @@
+export { RegistrableCommand } from './registrable-command';
+export { CommandScanner } from './command-scanner';
+export { BotOptions } from './bot-options';
+export { BotCommand } from './bot-command';
+export { BotAction } from './bot-action';
+export { ReflectionUtils } from './utils/reflection-utils';
 export { DiscordBot } from "./discord-bot";
+export { MessageProcessor } from "./message/message-processor";
+export { StandardMessageProcessor } from "./message/standard-message-processor";
