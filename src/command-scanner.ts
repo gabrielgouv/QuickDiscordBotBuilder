@@ -24,7 +24,14 @@ export class CommandScanner {
         // Removes '.ts' from file name for import
         file = file.substr(0, file.length - '.ts'.length);
 
-        import(`../${file}`).then((object) => {
+        const pathSplitted = file.split('/').length;
+        let goBackDir = '';
+
+        for (let i = 0; i < pathSplitted - 1; i++) {
+            goBackDir += '../'
+        }
+        
+        import(`${goBackDir}${file}`).then((object) => {
             const registerReturn = ReflectionUtils.invokeMethod(object);
             this.bot.registerCommand(registerReturn);
         }).catch(error => {
