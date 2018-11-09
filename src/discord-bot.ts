@@ -4,10 +4,9 @@ import BotCommand from "./bot-command";
 import RegistrableCommand from "./registrable-command";
 import MessageProcessor from "./message/message-processor";
 import StandardMessageProcessor from "./message/standard-message-processor";
-import fs from "fs";
-import path from "path"
 import Log from "./utils/log"
 import StringUtils from "./utils/string-utils";
+import CommandScanner from "./command-scanner";
 
 
 export default class DiscordBot {
@@ -21,7 +20,6 @@ export default class DiscordBot {
     public constructor(token: string)
     public constructor(options: BotOptions) 
     public constructor(value: any) {
-
         this.messageProcessor = new StandardMessageProcessor(this);
 
         if (typeof value === 'string') {
@@ -35,11 +33,9 @@ export default class DiscordBot {
         this.client = new Client();
         this.commands = [];
         this.skippedCommands = 0;
-    
     }
 
     public addCommand(command: BotCommand): void {
-
         if (this.findCommand(command.trigger)) {
             Log.warn(`[${StringUtils.setBashColor(33, 'SKIPPED')}] A command with '${StringUtils.setBashColor(90, command.trigger)}' trigger has already been added.`);
             this.skippedCommands++;
@@ -51,7 +47,8 @@ export default class DiscordBot {
     }
 
     public registerCommand(registrableCommand: RegistrableCommand): void {
-        registrableCommand.register(this);
+        const command = registrableCommand.register(this);
+        this.addCommand(command);
     }
 
     public findCommand(value: string): BotCommand | null {
@@ -65,8 +62,7 @@ export default class DiscordBot {
     }
 
     public start(): void {
-        
-        this.loadCommandsFromCommandsFolder();
+        this.scanAndRegisterCommands();
 
         this.client.on('ready', () => {
             Log.info(StringUtils.setBashColor(32, `Started successfully with ${this.commands.length} command(s) loaded and ${this.skippedCommands} skipped.`));
@@ -82,31 +78,11 @@ export default class DiscordBot {
         });
     }
 
-    // TODO: criar um file visitor
-    private loadCommandsFromCommandsFolder(): void {
-
-        const directory = this.options.commandsDirectory;
-
-        if (directory) {
-
-            const relativePath = '../' +  path.relative(process.cwd(), directory);
-            const dirFiles = fs.readdirSync(directory);
-
-            dirFiles.forEach(file => {
-
-                // TODO: Refactor
-                file = file.substr(0, file.length - 3);
-
-                import(`${relativePath + '/' + file}`).then((a) => {
-                    a.default.prototype.register(this);
-                }).catch(err => {
-                    Log.error(err);
-                })
-
-            })
-
+    private scanAndRegisterCommands(): void {
+        const commandFilePattern = this.options.commandFilePattern;
+        if (commandFilePattern) {
+            new CommandScanner(commandFilePattern, this).scanAndRegister();
         }
-  
     }
 
 }
