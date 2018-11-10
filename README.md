@@ -1,7 +1,7 @@
-![Quick Discord Bot Builder Logo](https://i.imgur.com/MUiMiKb.png)
 <p align="center">
+    <img src="https://i.imgur.com/p1mr00V.png" alt="Header">
     <a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder">
-    <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="Gratipay"></a>
+    <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="TravisCI"></a>
 </p>
 <br>
 
