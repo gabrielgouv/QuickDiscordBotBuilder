@@ -6,8 +6,10 @@ node_js:
   - '8'
 
 before_install:
-  - npm install -g typescript
-  - npm install
+  - npm i -g npm@6.4.1
+
+before_script:
+  - npm i -g typescript
 
 script:
   - npm run build
