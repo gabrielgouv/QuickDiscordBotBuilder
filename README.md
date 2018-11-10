@@ -32,9 +32,8 @@ Instalação no Windows:
 
 ### Criando um Bot
 Adicione a biblioteca ao projeto:
-```bash
-npm install qdbb
-```
+<br><br>
+<a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png?mini=true"></a>
 
 Agora, com tudo instalado e o token gerado, podemos criar o nosso primeiro Bot:
 
