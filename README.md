@@ -1,4 +1,9 @@
 ![Quick Discord Bot Builder Logo](https://i.imgur.com/MUiMiKb.png)
+<p align="center">
+    <a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder">
+    <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="Gratipay"></a>
+</p>
+<br>
 
 **Note: This documentation is still being written and will soon be translated to english.**</br>
 **Aviso: Esta documentação ainda está sendo redigida e em breve será traduzida para o inglês.**
