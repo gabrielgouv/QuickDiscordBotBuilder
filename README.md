@@ -1,5 +1,6 @@
 # Quick Discord Bot Builder
 
+**Note: This documentation is still being written and will soon be translated to english.**</br>
 **Aviso: Esta documentação ainda está sendo redigida e em breve será traduzida para o inglês.**
 
 Quick Discord Bot Builder (QDBB) é um "wrapper" do [discord.js](https://github.com/discordjs/discord.js/) que simplifica e acelera ainda mais a criação de bots para o Discord.
@@ -59,8 +60,8 @@ Se tudo der certo o seu comando será criado e o seu bot inicializado:
 #### Entendendo o código
 O código acima é extremamente simples e bem autoexplicativo. Perceba que basicamente criamos um bot e adicionamos um comando com as seguintes propriedades:
 
-```trigger```: Nome do comando e gatilho de execução. Quando for digitado no chat, o comando será executado;
-```description```: Descrição do comando, pode ser útil caso você queira criar um comando de ajuda :);
+```trigger```: Nome do comando e gatilho de execução. Quando for digitado no chat, o comando será executado;</br>
+```description```: Descrição do comando, pode ser útil caso você queira criar um comando de ajuda :);</br>
 ```onTriggered```: Recebe uma função que é executada no momento em que o gatilho for ativado.
 
 O objeto ```action``` no código acima é do tipo ```BotAction``` que é responsável por encapsular o objeto ```Message``` do discord.js. Além disso, possui métodos para obter informações e enviar respostas.
