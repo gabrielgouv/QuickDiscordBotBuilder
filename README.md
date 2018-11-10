@@ -3,19 +3,19 @@
 **Note: This documentation is still being written and will soon be translated to english.**</br>
 **Aviso: Esta documentação ainda está sendo redigida e em breve será traduzida para o inglês.**
 
-Quick Discord Bot Builder (QDBB) é um "wrapper" do [discord.js](https://github.com/discordjs/discord.js/) que simplifica e acelera ainda mais a criação de bots para o Discord.
+Quick Discord Bot Builder (QDBB) é um "wrapper" do [discord.js](https://github.com/discordjs/discord.js/) que simplifica e acelera ainda mais a criação de Bots para o Discord.
 
 ## Começando
-Estas instruções irão lhe guiar desde a instalação, criação do seu primeiro comando e execução do seu bot.
+Estas instruções irão lhe guiar desde a instalação, criação do seu primeiro comando e execução do seu Bot.
 
 ### Pré-requisitos
 #### Registro
-O primeiro passo é realizar o registro do seu bot no [Portal do desenvolvedor do Discord](https://discordapp.com/login?redirect_to=%2Fdevelopers). Faça o login com seu e-mail e senha do Discord para ter acesso.
+O primeiro passo é realizar o registro do seu Bot no [Portal do Desenvolvedor do Discord](https://discordapp.com/login?redirect_to=%2Fdevelopers). Faça o login com seu e-mail e senha do Discord para ter acesso.
 
-Clique aqui (WIP) para ver a explicação detalhada de registro.
+[Clique aqui](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal) para ver a explicação detalhada de registro (em inglês).
 
 #### FFmpeg
-Para que o bot consiga reproduzir áudios nos canais de voz do Discord é necessário ter instalado em sua máquina o [FFmpeg](https://www.ffmpeg.org/).
+Para que o Bot consiga reproduzir áudios nos canais de voz do Discord é necessário ter instalado em sua máquina o [FFmpeg](https://www.ffmpeg.org/).
 
 Instalação no Linux (Ubuntu):
 ```bash
@@ -25,13 +25,13 @@ sudo apt-get install ffmpeg
 Instalação no Windows:
 (WIP)
 
-### Criando um bot
+### Criando um Bot
 Adicione a biblioteca ao projeto:
 ```bash
 npm install qdbb
 ```
 
-Agora, com tudo instalado e o token gerado, podemos criar o nosso primeiro bot:
+Agora, com tudo instalado e o token gerado, podemos criar o nosso primeiro Bot:
 
 ```typescript
 let bot = new DiscordBot('BOT_TOKEN');
@@ -48,7 +48,7 @@ bot.addCommand({
 bot.start();
 ```
 
-Se tudo der certo o seu comando será criado e o seu bot inicializado:
+Se tudo der certo o seu comando será criado e o seu Bot inicializado:
 
 ```
 [Sat, 10 Nov 2018 07:12:06 GMT | info]     [ ADDED ] Added '!meunome' command in commands list.
@@ -58,7 +58,7 @@ Se tudo der certo o seu comando será criado e o seu bot inicializado:
 **Pronto!** Simples e rápido :D
 
 #### Entendendo o código
-O código acima é extremamente simples e bem autoexplicativo. Perceba que basicamente criamos um bot e adicionamos um comando com as seguintes propriedades:
+O código acima é extremamente simples e bem autoexplicativo. Perceba que basicamente criamos um Bot e adicionamos um comando com as seguintes propriedades:
 
 ```trigger```: Nome do comando e gatilho de execução. Quando for digitado no chat, o comando será executado;</br>
 ```description```: Descrição do comando, pode ser útil caso você queira criar um comando de ajuda :);</br>
@@ -91,4 +91,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
