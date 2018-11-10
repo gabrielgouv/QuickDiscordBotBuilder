@@ -1,6 +1,6 @@
-import { BotAction } from "../bot-action";
+import { BotAction } from "../bot/bot-action";
 import { Message } from "discord.js";
-import { BotCommand } from "../bot-command";
+import { BotCommand } from "../command/bot-command";
 
 export abstract class MessageProcessor {
 

@@ -1,11 +1,11 @@
 import { Client } from "discord.js";
 import { BotOptions } from "./bot-options";
-import { BotCommand } from "./bot-command";
-import { RegistrableCommand } from "./registrable-command";
-import { MessageProcessor } from "./message/message-processor";
-import { StandardMessageProcessor } from "./message/standard-message-processor";
-import { CommandScanner } from "./command-scanner";
-import Log from "./utils/log"
+import { BotCommand } from "../command/bot-command";
+import { RegistrableCommand } from "../command/registrable-command";
+import { MessageProcessor } from "../message/message-processor";
+import { StandardMessageProcessor } from "../message/standard-message-processor";
+import { CommandScanner } from "../command/command-scanner";
+import Log from "../utils/log"
 
 export class DiscordBot {
 

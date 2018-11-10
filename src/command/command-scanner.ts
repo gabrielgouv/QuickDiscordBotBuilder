@@ -1,12 +1,13 @@
 import { IOptions } from "glob";
+import { DiscordBot } from "../bot/discord-bot";
+import { invokeMethod } from "../utils/reflection-utils";
+import Log from "../utils/log";
 import glob from "glob";
-import Log from "./utils/log";
-import { DiscordBot } from "./discord-bot";
-import { ReflectionUtils } from "./utils/reflection-utils";
+import path from "path";
 
 export class CommandScanner {
 
-    private readonly options: IOptions = { ignore: 'dist/**/*' };
+    private readonly options: IOptions = { ignore: 'dist/**/*', absolute: true };
 
     public constructor(private pattern: string, private bot: DiscordBot) { }
     
@@ -21,22 +22,18 @@ export class CommandScanner {
     }
 
     public register(file: string): void {
+
         // Removes '.ts' from file name for import
+        file = path.relative(__dirname, file);
         file = file.substr(0, file.length - '.ts'.length);
 
-        const pathSplitted = file.split('/').length;
-        let goBackDir = '';
-
-        for (let i = 0; i < pathSplitted - 1; i++) {
-            goBackDir += '../'
-        }
-        
-        import(`${goBackDir}${file}`).then((object) => {
-            const registerReturn = ReflectionUtils.invokeMethod(object);
+        import(`./${file}`).then((object) => {
+            const registerReturn = invokeMethod(object);
             this.bot.registerCommand(registerReturn);
         }).catch(error => {
             Log.error(error);
         })
+
     }
 
 }

@@ -1,6 +1,6 @@
 import { MessageProcessor } from "./message-processor";
-import { DiscordBot } from "../discord-bot";
-import { BotCommand } from "../bot-command";
+import { DiscordBot } from "../bot/discord-bot";
+import { BotCommand } from "../command/bot-command";
 import { Message } from "discord.js";
 
 export class StandardMessageProcessor extends MessageProcessor {

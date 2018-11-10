@@ -1,4 +1,4 @@
-import { BotAction } from "./bot-action";
+import { BotAction } from "../bot/bot-action";
 
 export interface BotCommand {
 

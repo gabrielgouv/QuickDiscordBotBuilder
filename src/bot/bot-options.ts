@@ -1,4 +1,4 @@
-import { MessageProcessor } from "./message/message-processor";
+import { MessageProcessor } from "../message/message-processor";
 
 export interface BotOptions {
 
