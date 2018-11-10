@@ -1,4 +1,4 @@
-# Quick Discord Bot Builder
+![Quick Discord Bot Builder Logo](https://i.imgur.com/MUiMiKb.png)
 
 **Note: This documentation is still being written and will soon be translated to english.**</br>
 **Aviso: Esta documentação ainda está sendo redigida e em breve será traduzida para o inglês.**
