@@ -28,7 +28,7 @@ Instalação no Windows:
 ### Criando um bot
 Adicione a biblioteca ao projeto:
 ```bash
-npm install dqbb
+npm install qdbb
 ```
 
 Agora, com tudo instalado e o token gerado, podemos criar o nosso primeiro bot:
