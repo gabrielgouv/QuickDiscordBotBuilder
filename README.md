@@ -37,6 +37,8 @@ bot.start();
 
 4. Done! Run your code.
 
+For detailed explanation click here (Writting...).
+
 ## License
 ```
 MIT License
