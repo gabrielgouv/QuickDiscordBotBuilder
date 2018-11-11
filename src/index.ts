@@ -1,8 +1,9 @@
-export { BotCommand } from './command/bot-command';
-export { RegistrableCommand } from './command/registrable-command';
-export { CommandScanner } from './command/command-scanner';
-export { BotOptions } from './bot/bot-options';
-export { BotAction } from './bot/bot-action';
+export { BotCommand } from "./command/bot-command";
+export { RegistrableCommand } from "./command/registrable-command";
+export { CommandScanner } from "./command/command-scanner";
+export { BotOptions } from "./bot/bot-options";
+export { BotAction } from "./bot/bot-action";
 export { DiscordBot } from "./bot/discord-bot";
 export { MessageProcessor } from "./message/message-processor";
 export { StandardMessageProcessor } from "./message/standard-message-processor";
+export { Message } from "discord.js";
