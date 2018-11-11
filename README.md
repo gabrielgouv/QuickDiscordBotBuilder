@@ -2,6 +2,7 @@
     <img src="https://i.imgur.com/p1mr00V.png" alt="Header">
     <a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder">
     <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="TravisCI"></a>
+    <a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png?mini=true"></a>
 </p>
 <br>
 
@@ -32,8 +33,10 @@ Instalação no Windows:
 
 ### Criando um Bot
 Adicione a biblioteca ao projeto:
-<br><br>
-<a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png?mini=true"></a>
+```bash
+npm install qdbb
+```
+
 
 Agora, com tudo instalado e o token gerado, podemos criar o nosso primeiro Bot:
 
