@@ -63,15 +63,21 @@ export class DiscordBot {
         return this.commands;
     }
 
+    public getClient(): Client {
+        return this.client;
+    }
+
     public setMessageProcessor(messageProcessor: MessageProcessor): void {
         this.messageProcessor = messageProcessor;
     }
 
     public start(): void {
+
         this.scanAndRegisterCommands();
 
         this.client.on('ready', () => {
-            Log.info(`Started successfully with ${this.commands.length} command(s) loaded and ${this.skippedCommands} skipped.`);
+            const botUsername = this.client.user.username;
+            Log.info(`Started ${botUsername} with ${this.commands.length} command(s) loaded and ${this.skippedCommands} skipped.`);
             this.setUpChatMessageListener();
         })
 
@@ -80,7 +86,7 @@ export class DiscordBot {
 
     private setUpChatMessageListener(): void {
         this.client.on('message', message => {
-            this.messageProcessor.exec(message);
+            this.messageProcessor.exec(message, this);
         });
     }
 

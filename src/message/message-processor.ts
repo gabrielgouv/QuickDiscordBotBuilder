@@ -1,14 +1,15 @@
 import { BotAction } from "../bot/bot-action";
 import { Message } from "discord.js";
 import { Command } from "../command/command";
+import { DiscordBot } from "../bot/discord-bot";
 
 export abstract class MessageProcessor {
 
-    public exec(message: Message): void {
+    public exec(message: Message, bot: DiscordBot): void {
         const { trigger, args } = this.process(message);
         const command = this.findCommand(trigger);
-        const action = new BotAction(message);
         if (command) {
+            const action = new BotAction(message, bot, command);
             command.onTriggered(action, args)
         }
     }

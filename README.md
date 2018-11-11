@@ -31,8 +31,8 @@ bot.addCommand({
     trigger: '!saymyname',
     description: '— Heisenberg',
     onTriggered: (action) => {
-        const username = action.getUserName();
-        action.sendTextReply(`Hello, ${username}`);
+        const messageAuthor = action.getAuthor();
+        action.sendTextReply(`Hello, ${messageAuthor}`);
     }
 });
 

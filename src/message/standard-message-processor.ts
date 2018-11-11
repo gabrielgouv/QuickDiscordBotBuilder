@@ -12,11 +12,9 @@ export class StandardMessageProcessor extends MessageProcessor {
     process(message: Message): { trigger: string; args: string[]; } {
 
         const messageContent = message.content;
-
-        let splittedMessage = messageContent.split(' ');
-
-        let trigger = splittedMessage[0];
-        let args = splittedMessage.splice(1, splittedMessage.length);
+        const splittedMessage = messageContent.split(' ');
+        const trigger = splittedMessage[0];
+        const args = splittedMessage.splice(1, splittedMessage.length);
 
         return { trigger: trigger, args: args }
 
