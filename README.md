@@ -1,9 +1,10 @@
 <p align="center">
     <img src="/qdbb-header.png" alt="Header">
-    <a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder">
-    <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="TravisCI"></a>
-    <a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png?mini=true"></a>
 </p>
+<a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png"></a>
+<br>
+<a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder">
+    <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="TravisCI"></a>
 <br>
 
 Quick Discord Bot Builder (QDBB) is a wrapper for [discord.js](https://github.com/discordjs/discord.js/) that simplifies and speed up much more Discord Bot creation.
