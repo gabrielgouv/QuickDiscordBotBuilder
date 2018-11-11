@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.imgur.com/p1mr00V.png" alt="Header">
+    <img src="/qdbb-header.png" alt="Header">
     <a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder">
     <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="TravisCI"></a>
     <a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png?mini=true"></a>
