@@ -59,6 +59,10 @@ export class DiscordBot {
         return commandFound;
     }
 
+    public setMessageProcessor(messageProcessor: MessageProcessor): void {
+        this.messageProcessor = messageProcessor;
+    }
+
     public start(): void {
         this.scanAndRegisterCommands();
 
