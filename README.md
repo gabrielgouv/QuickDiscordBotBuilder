@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.imgur.com/p1mr00V.png" alt="Header">
+    <img src="/qdbb-header.png" alt="Header">
     <a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder">
     <img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="TravisCI"></a>
     <a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png?mini=true"></a>
@@ -8,7 +8,11 @@
 
 Quick Discord Bot Builder (QDBB) is a wrapper for [discord.js](https://github.com/discordjs/discord.js/) that simplifies and speed up much more Discord Bot creation.
 
+**Note: This project is under development and all versions under 0.X.X can be a break change.**
+
 ## Quickstart
+
+**This is a quick explanation for anyone who already has basic knowledge on NodeJS and TypeScript. If you need a more detailed explanation [click here](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Getting-Started).**
 
 1. Register a new Bot Application in Discord Developer Portal. [Click here](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal) to learn how to register.
 2. Install the module dependency:
@@ -35,9 +39,7 @@ bot.addCommand({
 bot.start();
 ```
 
-4. Done! Run your code.
-
-For detailed explanation click here (Writting...).
+4. **Done!** Run your code. Remember to [invite your Bot](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal#inviting-your-bot) to your server :).
 
 ## License
 ```
