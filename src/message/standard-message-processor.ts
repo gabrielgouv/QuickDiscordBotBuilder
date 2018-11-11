@@ -1,6 +1,6 @@
 import { MessageProcessor } from "./message-processor";
 import { DiscordBot } from "../bot/discord-bot";
-import { BotCommand } from "../command/bot-command";
+import { Command } from "../command/command";
 import { Message } from "discord.js";
 
 export class StandardMessageProcessor extends MessageProcessor {
@@ -22,7 +22,7 @@ export class StandardMessageProcessor extends MessageProcessor {
 
     }    
     
-    findCommand(trigger: string): BotCommand | null {
+    findCommand(trigger: string): Command | null {
         return this.bot.findCommand(trigger);
     }
     

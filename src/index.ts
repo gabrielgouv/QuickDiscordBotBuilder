@@ -1,4 +1,4 @@
-export { BotCommand } from "./command/bot-command";
+export { Command } from "./command/command";
 export { RegistrableCommand } from "./command/registrable-command";
 export { CommandScanner } from "./command/command-scanner";
 export { BotOptions } from "./bot/bot-options";

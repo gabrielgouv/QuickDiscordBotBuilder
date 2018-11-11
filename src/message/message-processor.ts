@@ -1,6 +1,6 @@
 import { BotAction } from "../bot/bot-action";
 import { Message } from "discord.js";
-import { BotCommand } from "../command/bot-command";
+import { Command } from "../command/command";
 
 export abstract class MessageProcessor {
 
@@ -14,6 +14,6 @@ export abstract class MessageProcessor {
     }
 
     abstract process(message: Message): { trigger: string, args: string[] };
-    abstract findCommand(trigger: string): BotCommand | null;
+    abstract findCommand(trigger: string): Command | null;
 
 }

@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
 import { BotOptions } from "./bot-options";
-import { BotCommand } from "../command/bot-command";
+import { Command } from "../command/command";
 import { RegistrableCommand } from "../command/registrable-command";
 import { MessageProcessor } from "../message/message-processor";
 import { StandardMessageProcessor } from "../message/standard-message-processor";
@@ -12,7 +12,7 @@ export class DiscordBot {
     private messageProcessor: MessageProcessor;
     private options: BotOptions;
     private client: Client;
-    private commands: BotCommand[]
+    private commands: Command[]
     private skippedCommands: number;
 
     public constructor(token: string)
@@ -33,7 +33,7 @@ export class DiscordBot {
         this.skippedCommands = 0;
     }
 
-    public addCommand(command: BotCommand): void {
+    public addCommand(command: Command): void {
         if (this.findCommand(command.trigger)) {
             Log.warn(`[SKIPPED] A command with '${command.trigger}' trigger has already been added.`);
             this.skippedCommands++;
@@ -49,7 +49,7 @@ export class DiscordBot {
         this.addCommand(command);
     }
 
-    public findCommand(value: string): BotCommand | null {
+    public findCommand(value: string): Command | null {
         let commandFound = null;
         this.commands.forEach(command => {
             if (command.trigger === value) {
@@ -59,7 +59,7 @@ export class DiscordBot {
         return commandFound;
     }
 
-    public getCommands(): BotCommand[] {
+    public getCommands(): Command[] {
         return this.commands;
     }
 
