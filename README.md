@@ -4,6 +4,7 @@
 <a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png"></a>
 <br>
 <a href="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder"><img src="https://travis-ci.org/gabrielgouv/QuickDiscordBotBuilder.svg?branch=master" alt="TravisCI"></a>
+<a href="https://david-dm.org/gabrielgouv/QuickDiscordBotBuilder" title="dependencies status"><img src="https://david-dm.org/gabrielgouv/QuickDiscordBotBuilder/status.svg"/></a>
 <a href="https://codebeat.co/projects/github-com-gabrielgouv-quickdiscordbotbuilder-master"><img alt="codebeat badge" src="https://codebeat.co/badges/d7fb7509-513e-4b3a-a552-79ae80b3a551" /></a>
 <a class="badge-align" href="https://www.codacy.com/app/GabrielGouv/QuickDiscordBotBuilder?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gabrielgouv/QuickDiscordBotBuilder&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/9f2a43fc09b34bf590a1fc042986b3ce"/></a>
 <br><br>
