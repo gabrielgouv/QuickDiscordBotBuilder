@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="/qdbb-header.png" alt="Header">
+    <img src="https://raw.githubusercontent.com/gabrielgouv/QuickDiscordBotBuilder/master/qdbb-header.png" alt="Header">
 </p>
 <a href="https://nodei.co/npm/qdbb/"><img src="https://nodei.co/npm/qdbb.png"></a>
 <br>
