@@ -44,6 +44,9 @@ bot.start();
 
 4. **Done!** Run your code. Remember to [invite your Bot](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal#inviting-your-bot) to your server :).
 
+## Thanks
+[Antonio Neto (aacgn)](https://github.com/aacgn)
+
 ## License
 ```
 MIT License
