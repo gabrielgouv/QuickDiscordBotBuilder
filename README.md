@@ -26,7 +26,7 @@ npm install qdbb
 3. Replace ```BOT_TOKEN``` below with your generated Bot token in Discord Developer Portal.
 
 ```typescript
-import { BotOptions, DiscordBot } from "dqbb";
+import { BotOptions, DiscordBot } from "qdbb";
 
 const bot = new DiscordBot('BOT_TOKEN');
 
