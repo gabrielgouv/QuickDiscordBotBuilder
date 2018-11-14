@@ -23,7 +23,7 @@ Quick Discord Bot Builder (QDBB) is a wrapper for [discord.js](https://github.co
 npm install qdbb
 ```
 
-3. Replace ```BOT_TOKEN``` below with your generated Bot token in Discord Developer Portal.
+3. Replace ```YOUR_BOT_TOKEN``` below with your generated Bot token in Discord Developer Portal.
 
 ```typescript
 import { DiscordBot } from "qdbb";
