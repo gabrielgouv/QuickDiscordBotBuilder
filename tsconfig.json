@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2015",
+    "lib": ["es2015"],
     "module": "commonjs",
-    "outDir": "./dist",
+    "outDir": "dist",
     "declaration": true,
     "strict": true,
     "types": ["node"],
@@ -10,5 +11,8 @@
   },
   "include": [
     "src/**/*"
+  ],
+  "exclude": [
+    "examples/**/*"
   ]
 }

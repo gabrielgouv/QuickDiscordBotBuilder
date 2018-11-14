@@ -1,4 +1,4 @@
-import path from 'path';
+import * as path from 'path';
 
 export const relativePathListFromCwd = (...paths: string[]): string[] => {
     return paths.map((file) => {

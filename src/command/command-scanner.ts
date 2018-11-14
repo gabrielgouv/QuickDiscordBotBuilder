@@ -2,8 +2,8 @@ import { IOptions } from "glob";
 import { DiscordBot } from "../bot/discord-bot";
 import { invokeMethod } from "../utils/reflection-utils";
 import Log from "../utils/log";
-import glob from "glob";
-import path from "path";
+import * as glob from "glob";
+import * as path from "path";
 
 export class CommandScanner {
 

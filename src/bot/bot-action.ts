@@ -3,7 +3,7 @@ import { DiscordBot } from './discord-bot';
 import { Message, Attachment, Client } from "discord.js";
 import { Command } from '../command/command';
 import { relativePathFromCwd, relativePathListFromCwd } from '../utils/file-utils';
-import fs from 'fs';
+import * as fs from 'fs';
 import Log from '../utils/log';
 
 export interface ImageResponseModel {
@@ -19,9 +19,7 @@ export interface FileResponseModel {
 
 export class BotAction {
 
-    public constructor(private message: Message, private bot: DiscordBot, private command: Command) {
-        Log.info(`Command '${command.trigger}' triggered by ${message.author.id}`);
-    }
+    public constructor(private message: Message, private bot: DiscordBot, private command: Command) { }
 
     public getMessage(): Message {
         return this.message;
