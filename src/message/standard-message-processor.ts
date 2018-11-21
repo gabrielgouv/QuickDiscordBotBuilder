@@ -1,12 +1,11 @@
 import { MessageProcessor } from "./message-processor";
 import { DiscordBot } from "../bot/discord-bot";
-import { Command } from "../command/command";
 import { Message } from "discord.js";
 
 export class StandardMessageProcessor extends MessageProcessor {
 
-    public constructor(private bot: DiscordBot) {
-        super();
+    public constructor(protected bot: DiscordBot) {
+        super(bot);
     }
 
     process(message: Message): { trigger: string; args: string[]; } {
@@ -19,9 +18,5 @@ export class StandardMessageProcessor extends MessageProcessor {
         return { trigger: trigger, args: args }
 
     }    
-    
-    findCommand(trigger: string): Command | null {
-        return this.bot.findCommand(trigger);
-    }
     
 }

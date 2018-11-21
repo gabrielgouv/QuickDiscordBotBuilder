@@ -5,16 +5,24 @@ import { DiscordBot } from "../bot/discord-bot";
 
 export abstract class MessageProcessor {
 
-    public exec(message: Message, bot: DiscordBot): void {
+    constructor(protected bot: DiscordBot) { }
+
+    public exec(message: Message): void {
         const { trigger, args } = this.process(message);
         const command = this.findCommand(trigger);
         if (command) {
-            const action = new BotAction(message, bot, command);
+            const action = new BotAction(message, this.bot, command);
             command.onTriggered(action, args)
         }
     }
 
     abstract process(message: Message): { trigger: string, args: string[] };
-    abstract findCommand(trigger: string): Command | null;
+    
+    findCommand(trigger: string): Command | null {
+        if (this.bot) {
+            return this.bot.findCommand(trigger);
+        }
+        return null;
+    }
 
 }
