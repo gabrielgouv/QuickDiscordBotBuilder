@@ -1,14 +1,16 @@
-import { DiscordBot } from "qdbb";
+import { DiscordBot, Command } from "qdbb";
 
-const bot = new DiscordBot('YOUR_BOT_TOKEN'); // Replace with your token
+const bot = new DiscordBot('BOT_TOKEN'); // Replace with your Bot token
 
-bot.addCommand({
+const sayMyName: Command = {
     trigger: '!saymyname',
     description: '— Heisenberg',
-    onTriggered: (action) => {
+    onTriggered: (action, args) => {
         const messageAuthor = action.getAuthor();
         action.reply(`Hello, ${messageAuthor}`)
     }
-});
+}
+
+bot.addCommand(sayMyName);
 
 bot.start();
