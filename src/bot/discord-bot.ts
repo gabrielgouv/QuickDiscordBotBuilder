@@ -18,6 +18,7 @@ export class DiscordBot {
     public constructor(token: string)
     public constructor(options: BotOptions) 
     public constructor(value: any) {
+        
         this.messageProcessor = new StandardMessageProcessor(this);
 
         if (typeof value === 'string') {
@@ -71,6 +72,10 @@ export class DiscordBot {
         this.messageProcessor = messageProcessor;
     }
 
+    public setCommandScanner(glob: string) {
+        this.options.commandScanner = glob;
+    }
+
     public start(): void {
 
         this.scanAndRegisterCommands();
@@ -91,9 +96,9 @@ export class DiscordBot {
     }
 
     private scanAndRegisterCommands(): void {
-        const commandFilePattern = this.options.commandFilePattern;
-        if (commandFilePattern) {
-            new CommandScanner(commandFilePattern, this).scanAndRegister();
+        const commandScanner = this.options.commandScanner;
+        if (commandScanner) {
+            new CommandScanner(commandScanner, this).scanAndRegister();
         }
     }
 
