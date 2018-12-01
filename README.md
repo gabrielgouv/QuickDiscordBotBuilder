@@ -52,7 +52,7 @@ For more details check out the [Wiki!](https://github.com/gabrielgouv/QuickDisco
 ## License
 MIT License
 
-Copyright (c) 2018 João Gabriel Gouveia
+Copyright (c) 2018 João Gabriel Gouveia de Almeida
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
