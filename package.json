@@ -17,6 +17,10 @@
     "robot",
     "command"
   ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/gabrielgouv/QuickDiscordBotBuilder.git"
+  },
   "author": "J. G. Gouveia",
   "license": "Apache-2.0",
   "dependencies": {

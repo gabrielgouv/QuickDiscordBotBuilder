@@ -8,7 +8,7 @@ export class PrefixedMessageProcessor extends MessageProcessor {
         super(bot);
     }
 
-    process(message: Message): { trigger: string; args: string[]; } {
+    public process(message: Message): { trigger: string; args: string[]; } {
 
         const messageContent = message.content;
 

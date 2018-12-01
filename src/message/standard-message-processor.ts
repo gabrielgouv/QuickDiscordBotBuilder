@@ -8,7 +8,7 @@ export class StandardMessageProcessor extends MessageProcessor {
         super(bot);
     }
 
-    process(message: Message): { trigger: string; args: string[]; } {
+    public process(message: Message): { trigger: string; args: string[]; } {
 
         const messageContent = message.content;
         const splittedMessage = messageContent.split(' ');
@@ -17,6 +17,6 @@ export class StandardMessageProcessor extends MessageProcessor {
 
         return { trigger: trigger, args: args }
 
-    }    
+    }
     
 }

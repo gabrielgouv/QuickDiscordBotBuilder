@@ -11,11 +11,11 @@
 
 Quick Discord Bot Builder (QDBB) is a wrapper for [discord.js](https://github.com/discordjs/discord.js/) that simplifies and speed up much more Discord Bot creation.
 
-⚠️**Note: This project is under development and all versions under 0.X.X can be a break change.**
+⚠️ **Note: This project is under development and all versions under 0.X.X can be a break change.**
 
 ## Quickstart
 
-**This is a quick explanation for anyone who already has basic knowledge on NodeJS and TypeScript. If you need a more detailed explanation [click here](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Getting-Started).**
+**This is a quick explanation for anyone who already has basic knowledge on NodeJS and TypeScript/JavaScript. If you need a more detailed explanation [click here](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Getting-Started).**
 
 1. Register a new Bot Application in Discord Developer Portal. [Click here](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal) to learn how to register.
 2. Install the module dependency:
@@ -23,7 +23,7 @@ Quick Discord Bot Builder (QDBB) is a wrapper for [discord.js](https://github.co
 npm install qdbb
 ```
 
-3. Replace ```YOUR_BOT_TOKEN``` below with your generated Bot token in Discord Developer Portal.
+3. Replace ```YOUR_BOT_TOKEN``` below with your generated Bot token in [Discord Developer Portal](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-Developer-Portal#step-5---done).
 
 ```typescript
 import { DiscordBot } from "qdbb";
@@ -32,7 +32,6 @@ const bot = new DiscordBot('YOUR_BOT_TOKEN');
 
 bot.addCommand({
     trigger: '!saymyname',
-    description: '— Heisenberg',
     onTriggered: (action) => {
         const messageAuthor = action.getAuthor();
         action.reply(`Hello, ${messageAuthor}`)
@@ -42,13 +41,12 @@ bot.addCommand({
 bot.start();
 ```
 
-4. **Done!** Run your code. Remember to [invite your Bot](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal#inviting-your-bot) to your server :).
+4. **Done!** Run your code and remember to [invite your Bot](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal#inviting-your-bot) to your server :).
 
 ## Thanks
 [Antonio Neto (aacgn)](https://github.com/aacgn)
 
 ## License
-```
 MIT License
 
 Copyright (c) 2018 João Gabriel Gouveia
@@ -70,4 +68,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
