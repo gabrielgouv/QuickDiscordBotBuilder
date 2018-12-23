@@ -1,6 +1,6 @@
 import * as path from 'path';
 
-export const relativePathListFromCwd = (...paths: string[]): string[] => {
+export const relativePathListFromCwd = (paths: string[]): string[] => {
     return paths.map((file) => {
         return relativePathFromCwd(file);
     });

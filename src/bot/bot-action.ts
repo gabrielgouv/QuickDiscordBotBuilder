@@ -8,7 +8,7 @@ import Log from '../utils/log';
 
 export interface ImageResponseModel {
     message: string;
-    imagePath: string[];
+    imagePath: string;
 }
 
 export interface FileResponseModel {
@@ -54,14 +54,14 @@ export class BotAction {
 
     private sendText(message: string): void {
         this.message.channel.send(message).catch(error => {
-            Log.error(`[${this.command.trigger}][sendText]: ${error}`);
+            Log.error(`[${this.command.trigger}][sendText]:\n${error}`);
         });
     }
 
-    private sendImage(message: string, ...files: string[]): void {
-        files = relativePathListFromCwd(...files);
-        this.message.channel.send(message, {files: files}).catch(error => {
-            Log.error(`[${this.command.trigger}][sendImage]: ${error}`);
+    private sendImage(message: string, imagePath: string): void {
+        imagePath = relativePathFromCwd(imagePath);
+        this.message.channel.send(message, {files: [imagePath]}).catch(error => {
+            Log.error(`[${this.command.trigger}][sendImage]:\n${error}`);
         });
     }
 
@@ -70,7 +70,7 @@ export class BotAction {
         fs.readFile(filePath, (error, file) => {
 
             if (error) {
-                Log.error(`[${this.command.trigger}][sendFile]: ${error}`);
+                Log.error(`[${this.command.trigger}][sendFile]:\n${error}`);
                 return;
             }
 
@@ -94,7 +94,7 @@ export class BotAction {
             }).catch(err => {
                 console.log(err)
                 if (leaveChannelWhenFinished) 
-                        voiceChannel.leave();
+                    voiceChannel.leave();
             });
         }
     }
