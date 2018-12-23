@@ -22,7 +22,7 @@
     "url" : "https://github.com/gabrielgouv/QuickDiscordBotBuilder.git"
   },
   "author": "J. G. Gouveia",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "dependencies": {
     "@types/glob": "^7.1.1",
     "discord.js": "^11.4.2",
