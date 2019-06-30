@@ -22,7 +22,7 @@ Quick Discord Bot Builder (QDBB) is a wrapper for [discord.js](https://github.co
 **This is a quick explanation for anyone who already has basic knowledge on NodeJS and TypeScript/JavaScript. If you need a more detailed explanation [click here](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Getting-Started).**
 
 1. Register a new Bot Application in Discord Developer Portal. [Click here](https://github.com/gabrielgouv/QuickDiscordBotBuilder/wiki/Registering-a-Discord-Bot-in-developer-portal) to learn how to register.
-2. Install the module dependency:
+2. Install the module dependency in your project:
 ```bash
 npm install qdbb
 ```
