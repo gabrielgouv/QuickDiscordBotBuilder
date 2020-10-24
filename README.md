@@ -11,11 +11,6 @@
 
 Quick Discord Bot Builder (QDBB) is a wrapper for [discord.js](https://github.com/discordjs/discord.js/) that simplifies and speed up much more Discord Bot creation.
 
----
-
-⚠️ **Note: This project is under development and all versions under 0.X.X can be a break change.**
-
----
 
 ## Quickstart
 
